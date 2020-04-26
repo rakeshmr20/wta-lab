@@ -1,0 +1,40 @@
+save xml file ass p5.xml
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/css" href="p5.css" ?>
+<vtu>
+	<student>
+		<name>NAME: Rakesh M R</name>
+		<usn>USN: 4AL16IS042</usn>
+		<college>COLLEGE: AIET</college>
+		<branch>BRANCH: ISE</branch>
+		<yoj>YOJ: 2016</yoj>
+		<email>E-mail: rakeshmr20@gmail.com</email>
+	</student>
+	<student>
+		<name>NAME: Rakesh M R</name>
+		<usn>USN: 4AL16IS042</usn>
+		<college>COLLEGE: AIET</college>
+		<branch>BRANCH: ISE</branch>
+		<yoj>YOJ: 2016</yoj>
+		<email>E-mail: rakeshmr20@gmail.com</email>
+	</student>
+	<student>
+		<name>NAME: Rakesh M R</name>
+		<usn>USN: 4AL16IS042</usn>
+		<college>COLLEGE: AIET</college>
+		<branch>BRANCH: ISE</branch>
+		<yoj>YOJ: 2016</yoj>
+		<email>E-mail: rakeshmr20@gmail.com</email>
+	</student>
+</vtu>
+
+save css in separate file p5.css
+
+vtu {display: block;}
+student {display: block; background-color: lightblue; margin-bottom: 9pt;}
+name {display: block; color: blue;}
+usn {display: block; background-color: yellow;}
+college {display: block; font-size: 12pt; color: brown;}
+branch {display: block;}
+yoj {display: block; }
+email {display: block; font-family: sans-serif; color: blue}

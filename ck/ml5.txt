@@ -1,0 +1,17 @@
+from sklearn.datasets import load_iris
+iris=load_iris()
+#store the feature matrix (x) and response vector (y)
+x=iris.data
+y=iris.target
+#spliting x and y into training and testing sets
+from sklearn.model_selection import train_test_split
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=1)
+#training the model on training set
+from sklearn.naive_bayes import GaussianNB
+gnb=GaussianNB()
+gnb.fit(x_train,y_train)
+#making prediction on the testing set
+y_pred=gnb.predict(x_test)
+#comparing actual response values(y_test)with prediction response values (y_pred)
+from sklearn import metrics
+print("gaussian Naive Bayes model accuracy(in%):",metrics.accuracy_score(y_test,y_pred)*100)

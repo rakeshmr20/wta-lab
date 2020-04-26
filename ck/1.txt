@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab Program-1</title>
+</head>
+<body>
+	<center><h2>Simple Calculator</h2><br>
+	<form name="calc">
+		<h3 id="ans"></h3>
+		<input type="text" name="in" oninput="document.getElementById('ans').innerHTML=eval(calc.in.value);">
+		<input type="button" value="Clear" onclick="calc.in.value='';">
+	</form></center>
+</body>
+</html>

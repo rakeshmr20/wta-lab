@@ -1,0 +1,518 @@
+Qns 1: Write a JavaScript to design a simple calculator to perform the following operations: sum, product, difference and quotient.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab Program-1</title>
+</head>
+<body>
+	<center><h2>Simple Calculator</h2>
+	<form name="calc">
+		<input type="text" name="in">
+		<input type="button" value="=" onclick="calc.in.value=eval(calc.in.value);">
+	</form></center>
+</body>
+</html>
+
+Qns 2: Write a JavaScript that calculates the squares and cubes of the numbers from 0 to 10    and outputs HTML text that displays the resulting values in an HTML table format.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab Program-2</title>
+</head>
+<body>
+	<center>
+		<h3>Program for Square and Cube</h3>
+		<script type="text/javascript">
+			document.write("<table border='1'><tr><th>Number</th><th>Square</th><th>Cube</th></tr>");
+			for (var i = 1; i < 11; i++) {
+				document.write("<tr><td>"+i+"</td><td>"+i*i+"</td><td>"+i*i*i+"</td></tr>");
+			}
+			document.write("</table>");
+		</script>
+	</center>
+</body>
+</html>
+
+Qns 3: Write a JavaScript code that displays text TEXT-GROWING with increasing font size in the interval of 100ms in RED COLOR, when the font size reaches 50pt it displays TEXT-SHRINKING in BLUE color. Then the font size decreases to 5pt.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Lab Program-3</title>
+	<script type="text/javascript">
+		function animate() {
+			var val = window.getComputedStyle(document.getElementById('text')).fontSize;
+			var font_size = parseInt(val);
+			var state = "growing";
+			var timer = setInterval(textanimate, 100);
+			function textanimate() {
+				if (state == "growing") {
+					font_size++;
+					document.getElementById('text').innerHTML = "TEXT GROWING";
+					document.getElementById('text').style.color = "red";
+					document.getElementById('text').style.fontSize = font_size+"pt";
+				}
+				if (state == "shrinking") {
+					font_size--;
+					document.getElementById('text').innerHTML = "TEXT SHRINKING";
+					document.getElementById('text').style.color = "blue";
+					document.getElementById('text').style.fontSize = font_size+"pt";
+				}
+				if (font_size == 50) {
+					state = "shrinking";
+				}
+				if (font_size == 5) {
+					clearInterval(timer);
+				}
+			}
+		}
+	</script>
+</head>
+<body onload="animate();">
+	<center>
+		<h1>Program for Increasing / Decreasing size of a text </h1>
+		<p id="text">Text</p>
+	</center>
+</body>
+</html>
+
+Qns 4: Develop and demonstrate a HTML5 file that includes JavaScript script that uses functions for the following problems:
+a.	Parameter: A string
+b.	Output: The position in the string of the left-most vowel
+c.	Parameter: A number
+d.	Output: The number with its digits in the reverse order
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Lab Program-4</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function validate() {
+			var inp = document.getElementById('val').value;
+			if (isNaN(inp)) {
+				findVowel(inp);
+			} else {
+				findReverse(inp);
+			}
+		}
+		function findVowel(inp) {
+			var str=inp.toLowerCase();
+			var pos=0,ch="";
+			for(var i=0;i<str.length;i++) {
+				ch = str.charAt(i);
+				if(ch=="a"||ch=="e"||ch=="i"||ch=="o"||ch=="u") {
+					pos = i+1;
+					break;
+				}
+			}
+			if (pos == 0) {
+				alert("Vowel not found.!");
+			} else {
+				alert("Vowel found at position: "+pos);
+			}
+		}
+		function findReverse(inp) {
+			var num = parseInt(inp);
+			var temp = num;
+			var rem = 0,rev = 0;
+			while(num>0) {
+				rem=num%10;
+				rev=rev*10+rem;
+				num=parseInt(num/10);
+			}
+			alert("Number : "+temp+"\nReverse Order : "+rev);
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<h2>Program to find left most vowel or Digits in reverse order</h2>
+		<input type="text" id="val" placeholder="Enter STRING or NUMBER" size="50">
+		<input type="button" value="Validate" onclick="validate();">
+	</center>
+</body>
+</html>
+
+Qns 5:Design an XML document to store information about a student in an engineering college affiliated to VTU. The information must include USN, Name, and Name of the College, Branch, Year of Joining, and email id. Make up sample data for 3 students. Create a CSS style sheet and use it to display the document.
+
+save xml file ass p5.xml
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/css" href="p5.css" ?>
+<vtu>
+	<student>
+		<name>NAME: Rakesh M R</name>
+		<usn>USN: 4AL16IS042</usn>
+		<college>COLLEGE: AIET</college>
+		<branch>BRANCH: ISE</branch>
+		<yoj>YOJ: 2016</yoj>
+		<email>E-mail: rakeshmr20@gmail.com</email>
+	</student>
+	<student>
+		<name>NAME: Rakesh M R</name>
+		<usn>USN: 4AL16IS042</usn>
+		<college>COLLEGE: AIET</college>
+		<branch>BRANCH: ISE</branch>
+		<yoj>YOJ: 2016</yoj>
+		<email>E-mail: rakeshmr20@gmail.com</email>
+	</student>
+	<student>
+		<name>NAME: Rakesh M R</name>
+		<usn>USN: 4AL16IS042</usn>
+		<college>COLLEGE: AIET</college>
+		<branch>BRANCH: ISE</branch>
+		<yoj>YOJ: 2016</yoj>
+		<email>E-mail: rakeshmr20@gmail.com</email>
+	</student>
+</vtu>
+
+save css in separate file p5.css
+
+vtu {display: block;}
+student {display: block; background-color: lightblue; margin-bottom: 9pt;}
+name {display: block; color: blue;}
+usn {display: block; background-color: yellow;}
+college {display: block; font-size: 12pt; color: brown;}
+branch {display: block;}
+yoj {display: block; }
+email {display: block; font-family: sans-serif; color: blue}
+
+Qns 6: Write a PHP program to keep track of the number of visitors visiting the web page and to display this count of visitors, with proper headings.
+
+<?php
+$count =0;
+$file = fopen("count.txt", 'a+');
+$count = fread($file, 10);
+fclose($file);
+$count++;
+echo "<center><h2>Number of Visitors: ".$count."</h2></center>";
+$file = fopen("count.txt", 'w');
+fwrite($file, $count);
+fclose($file);
+?>
+
+Qns 7: Write a PHP program to display a digital clock which displays the current time of the server.
+
+<html>
+    <head>
+        <meta http-equiv="refresh" content="1">
+        <title>Digital Clock</title>
+        <style type="text/css">
+            h1 {text-align: center}
+            div {font-size: xxx-large; padding-top: 200px;}
+        </style>
+    </head>
+    <body>
+    <div align:center>
+        <?php
+            echo "<h1>".date('h:i:s A')."</h1>";
+        ?>
+    </div>
+    </body>
+</html>
+
+Qns 8: Write the PHP programs to do the following:
+a.	Implement simple calculator operations.
+b.	Find the transpose of a matrix.
+c.	Multiplication of two matrices.
+d.	Addition of two matrices.
+
+Program 8a.php
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$ans = null;
+if (isset($_POST['submit'])) {
+	$ex = $_POST['exp'];
+	$ans = eval('return '.$ex.";");
+}
+?>
+<form name="calc" action="" method="POST" style="text-align:center; margin-top: 20%;">
+	<input type="text" name="exp" value="<?php if(!is_null($ans)) echo($ans);?>" placeholder="Enter expression here">
+	<input type="submit" name="submit">
+</form>
+</body>
+</html>
+
+Program 8b.php
+<?php				
+$mat=Array(Array(1,2),				
+Array(4,5),				
+Array(7,8));  //Initializing Array in PHP	
+$transpose=Array();	//Creating empty array in PHP	
+echo "<html><head><title>Matrix Transpose</title></head><body>";	
+echo "<h1>Matrix is:<br/>";		
+for($i = 0; $i < count($mat); $i++)		
+{				
+for ($j = 0; $j < count($mat[0]); $j++)	
+{				
+echo $mat[$i][$j] . " ";		
+}				
+echo "</br/>";				
+}				
+echo "</h1>";				
+for($i = 0; $i < count($mat); $i++)	//calculation for Transpose	
+for($j = 0; $j < count($mat[0]); $j++)		
+{				
+$transpose[$j][$i]=$mat[$i][$j];		
+}				
+echo "<h1>Transpose of a Matrix is:<br/>";		
+for($i = 0; $i < count($transpose); $i++)		
+{				
+for ($j = 0; $j < count($transpose[0]); $j++)
+{
+
+echo $transpose[$i][$j] . " ";
+}
+echo "<br/>";
+}
+echo "</h1>";
+
+echo "</body></html>";
+?>
+
+Program 8c.php
+<?php	
+$mat1=Array(Array(1,2),
+                        Array(3,4),
+                        Array(5,6));		
+ $mat2=Array(Array(2,4,8),		
+                        Array(1,3,5));
+echo "<html><head><title>Matrix Multiplication</title></head><body>";
+ if(count($mat1[0])!=count($mat2)) {
+ echo "<h1>Incompatible Matrices</h1>";
+exit(0);
+}
+$res=array();
+echo "<h1>Matrix A:<br/>";
+for($i = 0; $i < count($mat1); $i++)
+{
+       for ($j = 0; $j < count($mat1[0]); $j++)
+    {
+        echo $mat1[$i][$j] . " ";
+     }
+     echo "<br/>";
+}
+echo "</h1>";
+echo "<h1>Matrix B:<br/>";
+for($i = 0; $i < count($mat2); $i++)
+{
+      for ($j = 0; $j < count($mat2[0]); $j++)
+      {
+        echo $mat2[$i][$j] . " ";
+       }
+echo "<br/>";
+}
+echo "</h1>";
+for($i = 0; $i < count($mat1); $i++)
+for($j = 0; $j < count($mat2[0]); $j++)
+{
+       $res[$i][$j]=0;
+        for($k=0;$k<count($mat2);$k++)
+        $res[$i][$j]=$res[$i][$j]+$mat1[$i][$k]*$mat2[$k][$j];
+}
+echo "<h1>A x B:<br/>";
+for($i = 0; $i < count($res); $i++)
+{
+      for ($j = 0; $j < count($res); $j++)
+      {
+           echo $res[$i][$j] . " ";
+       }
+echo "<br/>";
+}
+echo "</h1>";
+echo "</body></html>";
+?>
+
+Program 8d.php
+<?php
+$mat1=Array(Array(1,2),
+                        Array(3,4),
+                        Array(5,6));
+$mat2=Array(Array(1,1),
+                          Array(2,2),
+                          Array(3,3));
+echo "<html><head><title>Matrix Addition</title></head><body>";
+if((count($mat1)!=count($mat2))||(count($mat1[0])!=count($mat2[0]))) {
+echo "<h1>Incompatible Matrices</h1>";
+exit(0);
+}
+echo "<h1>Matrix A:<br/>";
+for($i=0;$i<count($mat1);$i++)
+
+{
+for ($j = 0; $j < count($mat1[0]); $j++)
+{
+echo $mat1[$i][$j] . " ";
+}
+
+echo "<br/>";
+}
+echo "</h1>";
+echo "<h1>Matrix B:<br/>";
+for($i = 0; $i < count($mat2); $i++)
+
+{
+for ($j = 0; $j < count($mat2[0]); $j++)
+{
+echo $mat2[$i][$j] . " ";
+}
+
+echo "<br/>";
+}
+echo "</h1>";
+
+$res=array();
+
+for($i = 0; $i < count($mat1); $i++)
+for($j = 0; $j < count($mat1[0]); $j++)
+{
+$res[$i][$j]=$mat1[$i][$j]+$mat2[$i][$j];
+
+}echo "<h1>A + B :<br/>";
+for($i = 0; $i < count($res); $i++)
+{
+for ($j = 0; $j < count($res[0]); $j++)
+{
+echo $res[$i][$j] . " ";
+}
+echo "<br/>";
+}
+echo "</h1>";
+?>
+
+Qns 9: Write a Python program named states.py that declares variable states with value "Mississippi Alabama Texas Massachusetts Kansas". write a PHP program that does the following:
+a)	Search for a word in variable states that ends in xas. Store this word in element 0 of a list named statesList.
+b)	Search for a word in states that begins with k and ends in s. Perform a case-insensitive comparison. [Note: Passing re .I as a second parameter to method compile performs a case-insensitive comparison.] Store this word in element1 of statesList.
+c)	Search for a word in states that begins with M and ends in s. Store this word in element 2 of the list.
+d)	Search for a word in states that ends in a. Store this word in element 3 of the list.
+
+save file as p9.php
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pattern Matching using python</title>
+</head>
+<body>
+<?php
+$res=shell_exec("python server.py");
+$states=explode("\n",$res);
+echo "Statement is : <b>$states[4]</b><br/>";
+echo "Word that end with xas : <b>$states[0]</b><br/>";
+echo "Word that Starts with k and end with s (Case Insensitive):<b>$states[1]</b><br/>";
+echo "Word that Starts with M and end with s : <b>$states[2]</b><br/>";
+echo "Word that end with a : <b>$states[3]</b>"; 
+?>
+</body>
+</html>
+
+save file as server.py
+
+import re
+states="Mississippi Alabama Texas Massachusetts Kansas"
+statesArr=states.split()
+statesList=list()
+for val in statesArr:
+	if(re.search('xas$',val)):
+		statesList.append(val)
+for val in statesArr:
+	if(re.search('^k.*s$',val,re.I)):
+		statesList.append(val)
+for val in statesArr:
+	if(re.search('^M.*s$',val)):
+		statesList.append(val)
+for val in statesArr:
+	if(re.search('a$',val)):
+		statesList.append(val)
+for val in statesList:
+	print(val)
+print(states);
+
+Qns 10: Write a PHP program to sort the student records which are stored in the database using selection sort.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selection sort</title>
+	<style type="text/css">
+		table, td, th {
+			border: 1px solid black;
+			width: 33%;
+			text-align: center;
+			border-collapse:collapse;
+			background-color:lightblue;
+		}
+		table { margin: auto; }
+	</style>
+</head>
+<body>
+<?php
+$a=[];
+$conn = mysqli_connect("localhost", "root", "root", "weblab");
+$sql = "SELECT * FROM student";
+$result = $conn->query($sql);
+echo "<center> BEFORE SORTING </center>";
+echo "<table border='2'>";
+echo "<tr><th>USN</th><th>NAME</th></tr>";
+if ($result->num_rows> 0)
+{
+	while($row = $result->fetch_assoc()){
+		echo "<tr>";
+		echo "<td>". $row["usn"]."</td>";
+		echo "<td>". $row["name"]."</td></tr>";
+
+		array_push($a,$row["usn"]);
+	}
+}
+else
+echo "Table is Empty";
+echo "</table>";
+$n=count($a);
+for ( $i = 0 ; $i< ($n - 1) ; $i++ )
+{
+	$pos= $i;
+	for ( $j = $i + 1 ; $j < $n ; $j++ )
+	{
+		if ( $a[$pos] > $a[$j] )
+		$pos= $j;
+	}
+	if ( $pos!= $i )
+	{
+		$temp=$a[$i];
+		$a[$i] = $a[$pos];
+		$a[$pos] = $temp;
+	}
+}
+$c=[];
+$result = $conn->query($sql);
+if ($result->num_rows> 0)
+{
+	while($row = $result->fetch_assoc())
+	{
+		for($i=0;$i<$n;$i++)
+		{
+			if($row["usn"]== $a[$i])
+			{
+				$c[$i]=$row["name"];
+			}
+		}
+	}
+}
+echo "<br>";
+echo "<center> AFTER SORTING <center>";
+echo "<table border='2'>";
+echo "<tr><th>USN</th><th>NAME</th><th>Address</th></tr>";
+for($i=0;$i<$n;$i++)
+{
+echo "<tr>";
+echo "<td>". $a[$i]."</td>";
+echo "<td>". $c[$i]."</td></tr>";
+}
+echo "</table>";
+$conn->close();
+?>
+</body>
+</html>

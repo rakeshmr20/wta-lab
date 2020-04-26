@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab Program-2</title>
+	<style type="text/css">
+		#sc {
+		    overflow:hidden;
+		    overflow-y: scroll;
+		    height: 450px;
+		}
+		table  {text-align: center;}
+		tr:nth-child(odd)  {background-color: #888888;}
+		td:nth-child(even)  {background-color: lightblue;}
+	</style>
+</head>
+<body onload="genTable();">
+	<!--<center>
+		<h3>Program for Square and Cube</h3>
+		<script type="text/javascript">
+			document.write("<table border='1'><tr><th>Number</th><th>Square</th><th>Cube</th></tr>");
+			for (var i = 1; i < 11; i++) {
+				document.write("<tr><td>"+i+"</td><td>"+i*i+"</td><td>"+i*i*i+"</td></tr>");
+			}
+			document.write("</table>");
+		</script>
+	</center>-->
+	<div align="center">
+		<h3>Program for Square and Cube</h3><p id="cval"></p>
+		<table border="2" id="mul">
+			<thead>
+				<tr>
+					<th>Number</th>
+					<th>Square</th>
+					<th>Cube</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+				</tr>
+			</tbody>
+		</table>
+		<button onclick="genTable();">Add +10</button>
+		<button onclick="remTable();">Remove -10</button>
+	</div>
+	<script type="text/javascript">
+		var counter = 1;
+		var table = document.getElementById('mul');
+		function genTable() {
+			document.getElementById('cval').innerHTML = "Adding "+counter+" to "+(counter+9);
+			for (var i = counter; i < counter+10; i++) {
+				var row = table.insertRow(i+1);
+				var cell1 = row.insertCell(0).innerHTML=i;
+				var cell2 = row.insertCell(1).innerHTML = i*i;
+				var cell3 = row.insertCell(2).innerHTML = i*i*i;
+			}
+			counter += 10;
+		}
+		function remTable() {
+			if (counter<2) {alert("No more items to remove.!!!"); return 0;}
+			for (var i = counter; i > counter-10; i--) {
+				table.deleteRow(i);
+			}
+			counter -= 10;
+			document.getElementById('cval').innerHTML = "Removed from "+(counter+9)+" to "+counter;
+		}
+	</script>
+</body>
+</html>

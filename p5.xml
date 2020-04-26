@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/css" href="p5.css" ?>
+<vtu>
+	<student>
+		<name>NAME: Rakesh M R</name>
+		<usn>USN: 4AL16IS042</usn>
+		<college>COLLEGE: AIET</college>
+		<branch>BRANCH: ISE</branch>
+		<yoj>YOJ: 2016</yoj>
+		<email>E-mail: rakeshmr20@gmail.com</email>
+	</student>
+	<student>
+		<name>NAME: Rakesh M R</name>
+		<usn>USN: 4AL16IS042</usn>
+		<college>COLLEGE: AIET</college>
+		<branch>BRANCH: ISE</branch>
+		<yoj>YOJ: 2016</yoj>
+		<email>E-mail: rakeshmr20@gmail.com</email>
+	</student>
+	<student>
+		<name>NAME: Rakesh M R</name>
+		<usn>USN: 4AL16IS042</usn>
+		<college>COLLEGE: AIET</college>
+		<branch>BRANCH: ISE</branch>
+		<yoj>YOJ: 2016</yoj>
+		<email>E-mail: rakeshmr20@gmail.com</email>
+	</student>
+</vtu>

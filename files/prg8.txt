@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<?php
+$ans = null;
+if (isset($_POST['submit'])) {
+	$ex = $_POST['exp'];
+	$ans = eval('return '.$ex.";");
+}
+?>
+<form name="calc" action="" method="POST" style="text-align:center; margin-top: 10%;">
+	<input type="text" name="exp" value="<?php if(!is_null($ans)) echo($ans);?>" placeholder="Enter expression here">
+	<input type="submit" name="submit">
+</form>
+</body>
+</html>

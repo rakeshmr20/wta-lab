@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab Program-1</title>
+	<!--<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+	document.getElementById('ans').innerHTML=(eval(calc.in.value)==undefined)? '0':eval(calc.in.value);
+	-->
+	<style type="text/css">
+		@font-face{
+		 	font-family:'digital-clock-font';
+		 	src: url('digital-7.ttf');
+		}
+		/*body {
+			background-color: #000000;
+		}
+		h2 {
+			color: #F9FFF9;
+		}*/
+		input[type="text"], h3, h2, input[type="button"] {
+			font-family: 'digital-clock-font';
+			font-size: 23pt;
+		}
+		input[type="button"] {
+			margin-top: 12px;
+			color: red;
+			background-color: #FFFFFF;
+		}
+		input {
+			text-align: right;
+		}
+		#ann {
+			border: none;
+			/*color: #FFFFFF;
+			background-color: #000000;
+			font-weight: bold;*/
+		}
+		#in {
+			padding-right: 5px; 
+			/*color: #FFFFFF;
+			background-color: #222222;*/
+			border-radius: 8px;
+		}
+		#log {
+			color: #FFFFFF;
+			background-color: #000000;
+		}*/
+	</style>
+</head>
+<body onload="animate();">
+	<center><h2>Simple Calculator</h2><br>
+	<form name="calc">
+		<input type="text" name="ann" id="ann" readonly placeholder="CKASHI"><br>
+		<input type="text" name="in" id="in" oninput="calc.ann.value=(eval(calc.in.value)==undefined)? '0':eval(calc.in.value);" ><br>
+		<input type="button" value="Clear" onclick="calc.in.value='';calc.ann.value='';">
+		<input type="button" value="on/off" onclick="onoff();">
+		<br><p name="log" id="log"></p>
+	</form></center>
+	<script type="text/javascript">
+		//var x = document.getElementById('in');
+		var x = 1;
+		function animate() {
+			var str = ["C","K","A","S","H","I"];
+			var name = "";
+			var anim = setInterval(ck, 200);
+			function ck() {
+				if (parseInt(name.length)<6) {
+					name = name+str[name.length];
+					calc.in.value = name;
+				}
+				else {
+					calc.ann.value = name;
+					calc.in.value = '';
+					clearInterval(anim);
+				}
+			}
+			//x.placeholder = "0";
+			calc.in.placeholder = '0';
+		}
+		function on() {
+			calc.ann.placeholder = 'CKASHI';
+			calc.ann.value='';
+			calc.in.readOnly = false;
+			animate();
+		}
+		function off() {
+			calc.ann.placeholder = '';
+			calc.ann.value = '';
+			calc.in.value = '';
+			calc.in.placeholder = '';
+			calc.in.readOnly = true;
+		}
+		function onoff() {
+			if (x==1) {x=0; off();} else {x=1; on();}
+		}
+	</script>
+</body>
+</html>
